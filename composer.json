@@ -2,6 +2,8 @@
     "name": "natsumeaurlia/auto-property-reflection",
     "description": "Automatically reflect properties.",
     "license": "MIT",
+    "keywords": ["api", "reflecction", "utility", "entity"],
+    "type": "library",
     "autoload": {
         "psr-4": {
             "Natsumeaurlia\\Reflection\\": "src/"
@@ -21,5 +23,6 @@
     },
     "scripts": {
         "test": "phpunit ./tests"
-    }
+    },
+    "minimum-stability": "stable"
 }
