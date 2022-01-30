@@ -2,6 +2,12 @@
 Provide a simple property initialization.
 API resources can be easily represented.
 
+## Installation
+
+```
+composer require natsumeaurlia/auto-property-reflection
+```
+
 ## Usage
 
 Extends from an abstract class.
