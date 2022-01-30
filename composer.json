@@ -1,0 +1,25 @@
+{
+    "name": "natsumeaurlia/auto-property-reflection",
+    "description": "Automatically reflect properties.",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Natsumeaurlia\\Reflection\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "require": {
+        "php": ">=7.1",
+        "ext-json": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": ">=7.0"
+    },
+    "scripts": {
+        "test": "phpunit ./tests"
+    }
+}
