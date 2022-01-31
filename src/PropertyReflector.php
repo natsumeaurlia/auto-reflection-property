@@ -34,7 +34,7 @@ abstract class PropertyReflector
 
             $propertyType = $reflectionType->getName();
             if ($reflectionType->isBuiltin()) {
-                $tmp_value = $vars;
+                $tmp_value = $value;
                 try {
                     settype($tmp_value, $propertyType);
                     $this->$key = $tmp_value;
