@@ -8,6 +8,7 @@ class GithubUser extends PropertyReflector
 {
     public $id;
     public $login;
+    public \DateTime $created_at;
     public $testProperty;
     protected $node_id;
     protected $avatar_url;
