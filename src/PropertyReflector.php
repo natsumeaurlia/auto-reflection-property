@@ -25,24 +25,24 @@ abstract class PropertyReflector
             if (!in_array($key, $properties)) {
                 continue;
             }
-            $reflectionType = $reflection->getProperty($key);
+            $reflectionType = $reflection->getProperty($key)->getType();
 
-            if (!$reflectionType->getName()) {
+            if (!$reflectionType) {
                 $this->$key = $value;
                 continue;
             }
+
             $propertyType = $reflectionType->getName();
+            if ($reflectionType->isBuiltin()) {
+                $tmp_value = $vars;
+                try {
+                    settype($tmp_value, $propertyType);
+                    $this->$key = $tmp_value;
+                    continue;
+                } catch (Throwable $t) {}
+            }
 
             try {
-                if ($reflectionType->isBuiltin()) {
-                    $tmp_value = $vars;
-                    if (settype($tmp_value, $propertyType)) {
-                        $this->$key = $tmp_value;
-                        continue;
-                    }
-                    $this->$key = $value;
-                    continue;
-                }
                 $this->$key = new $propertyType($value);
             } catch (Throwable $t) {
                 $this->$key = $value;

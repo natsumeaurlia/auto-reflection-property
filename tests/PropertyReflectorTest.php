@@ -69,4 +69,13 @@ class PropertyReflectorTest extends TestCase
 
         $this->assertNull($user->getName());
     }
+
+    public function test_should_create_named_property()
+    {
+        // created_at property is DateTime
+        $user = new GithubUser($this->json);
+
+        $this->assertNotNull($user->created_at);
+        $this->assertTrue($user->created_at instanceof \DateTime);
+    }
 }
