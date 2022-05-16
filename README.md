@@ -1,4 +1,4 @@
-# auto relection property
+# auto reflection property
 Provide a simple property initialization.
 API resources can be easily represented.
 
